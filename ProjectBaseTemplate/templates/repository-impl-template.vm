@@ -1,0 +1,25 @@
+package $classRepository.packageName;
+
+import $interfaceRepository.packageName.$interfaceRepository.name;
+import $classVO.packageName.$classVO.name;
+
+public class $classRepository.name implements $interfaceRepository.name
+{
+	@Override
+	public $classVO.name get($classVO.typePk pk)
+	{
+		return null;
+	}
+
+	@Override
+	public $classVO.name save($classVO.name vo)
+	{
+		return null;
+	}
+
+	@Override
+	public $classVO.name delete($classVO.name vo)
+	{
+		return null;
+	}
+}

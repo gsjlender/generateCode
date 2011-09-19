@@ -1,0 +1,27 @@
+package $interfaceService.packageName;
+
+import $classVO.packageName.$classVO.name;
+
+public interface $interfaceService.name
+{
+	/**
+	 * 
+	 * @param pk
+	 * @return
+	 */
+	public $classVO.name get($classVO.typePk pk);
+	
+	/**
+	 * 
+	 * @param vo
+	 * @return
+	 */
+	public $classVO.name save($classVO.name vo);
+	
+	/**
+	 * 
+	 * @param vo
+	 * @return
+	 */
+	public $classVO.name delete($classVO.name vo);
+}

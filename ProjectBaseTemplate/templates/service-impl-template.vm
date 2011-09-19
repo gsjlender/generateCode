@@ -1,0 +1,33 @@
+package $classService.packageName;
+
+import $interfaceService.packageName.$interfaceService.name;
+import $interfaceRepository.packageName.$interfaceRepository.name;
+import $classVO.packageName.$classVO.name;
+
+public class $classService.name implements $interfaceService.name
+{
+	private $interfaceRepository.name repository;
+
+	public void setRepository($interfaceRepository.name repository)
+	{
+		this.repository = repository;
+	}
+
+	@Override
+	public $classVO.name get($classVO.typePk pk)
+	{
+		return this.repository.get(pk);
+	}
+
+	@Override
+	public $classVO.name save($classVO.name vo)
+	{
+		return this.repository.save(vo);
+	}
+
+	@Override
+	public $classVO.name delete($classVO.name vo)
+	{
+		return this.repository.delete(vo);
+	}
+}

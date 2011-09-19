@@ -1,0 +1,72 @@
+package $classVO.packageName;
+
+import java.io.Serializable;
+
+public class $classVO.name implements Serializable
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+#foreach( $attribute in $classVO.attributes )
+	private $attribute.type $attribute.name;
+#end
+
+#foreach( $attribute in $classVO.attributes )
+	/**
+	 * @return the $attribute.name
+	 */
+	public $attribute.type get$attribute.name.substring(0,1).toUpperCase()$attribute.name.substring(1)()
+	{
+		return $attribute.name;
+	}
+	
+	/**
+	 * @param $attribute.name the $attribute.name to set
+	 */
+	public void set$attribute.name.substring(0,1).toUpperCase()$attribute.name.substring(1)($attribute.type $attribute.name)
+	{
+		this.$attribute.name = $attribute.name;
+	}
+	
+#end
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public int hashCode()
+	{
+		final int PRIME = 31;
+		int result = 1;
+#foreach( $attribute in $classVO.attributes )
+		result = PRIME * result
+			+ (($attribute.name == null) ? 0 : $attribute.name#[[.hashcode()]]#);
+#end
+		return result;
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		$classVO.name other = ($classVO.name) obj;
+#foreach( $attribute in $classVO.attributes )
+		if ($attribute.name == null)
+		{
+			if (other.$attribute.name != null)
+				return false;
+		} else if (!$attribute.name#[[.equals(]]#other.$attribute.name))
+			return false;
+#end
+		return true;
+	}
+}
